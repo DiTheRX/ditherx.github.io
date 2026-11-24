@@ -1,0 +1,13 @@
+{
+  "note": "Test library of the ditherx-test plugin for Dev.Sox.Cinema. Every title gets the generic clip; a few TMDB ids get their own entry.",
+  "any": [
+    { "id": "test-720p", "title": "Тестовый ролик 720p (30 с)", "quality": "720p" }
+  ],
+  "byTmdb": {
+    "movie:603": [{ "id": "test-720p", "title": "The Matrix — тестовый ролик", "quality": "720p" }],
+    "movie:550": [{ "id": "test-720p", "title": "Fight Club — тестовый ролик", "quality": "720p" }]
+  },
+  "media": {
+    "test-720p": { "file": "media/test-720p.mp4", "duration": 30, "name": "Dev.Sox test clip" }
+  }
+}
