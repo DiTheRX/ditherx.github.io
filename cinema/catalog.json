@@ -2,11 +2,11 @@
   "plugins": [
     {
       "id": "ditherx-test",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "name": "DiTheRX Test",
       "description": {
-        "ru": "Тестовый сторонний плагин: ролик 30 с с ditherx.github.io на любой фильм",
-        "en": "Test third-party plugin: a 30 s clip from ditherx.github.io for any title"
+        "ru": "Тестовый сторонний плагин: ролик 30 с с ditherx.github.io на любой фильм и своя вкладка в карточке",
+        "en": "Test third-party plugin: a 30 s clip from ditherx.github.io for any title, with its own title card tab"
       },
       "author": {
         "name": "DiTheRX",
@@ -18,6 +18,14 @@
       ],
       "bundle": "https://raw.githubusercontent.com/DiTheRX/ditherx.github.io/209fffc4763bd005a3d362788d3445902c5d5a19/cinema/plugin.js",
       "sha256": "c7298a078f350f751a10c332acf75eecdaa4e8dba50bf5a0230e4df51fd35dc6",
+      "ui": {
+        "bundle": "https://raw.githubusercontent.com/DiTheRX/ditherx.github.io/c376be12e7c3a1fda65fdfd7a1c938d21a068574/cinema/ui.html",
+        "sha256": "40f042b147e20ed8ca9b827704b51c1e1f7bf17c6c65db2a8924e9b3edff4d10",
+        "tab": {
+          "ru": "DiTheRX Test",
+          "en": "DiTheRX Test"
+        }
+      },
       "settings": [
         {
           "key": "everywhere",

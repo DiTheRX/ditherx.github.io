@@ -4,6 +4,7 @@ Public test plugin **ditherx-test** for [Dev.Sox.Cinema](https://github.com/Dev-
 third-party plugins (see `docs/PLUGINS.md` there).
 
 - `cinema/plugin.js` — the plugin bundle (runs in the platform's QuickJS sandbox)
+- `cinema/ui.html` — its title card tab (runs in a sandboxed iframe, network via `cinema.fetch`)
 - `cinema/manifest.json` — its catalog entry (bundle pinned to a commit, sha256)
 - `cinema/catalog.json` — a one-plugin catalog for trying it: `PLUGIN_CATALOG_URL=https://ditherx.github.io/cinema/catalog.json`
 - `cinema/library.json` — what it offers: a generic test clip for any title, own entries for a few TMDB ids
