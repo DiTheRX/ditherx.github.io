@@ -1,0 +1,22 @@
+{
+  "id": "ditherx-test",
+  "version": "1.0.0",
+  "name": "DiTheRX Test",
+  "description": {
+    "ru": "Тестовый сторонний плагин: ролик 30 с с ditherx.github.io на любой фильм",
+    "en": "Test third-party plugin: a 30 s clip from ditherx.github.io for any title"
+  },
+  "author": { "name": "DiTheRX", "url": "https://github.com/DiTheRX" },
+  "homepage": "https://github.com/DiTheRX/ditherx.github.io/blob/209fffc4763bd005a3d362788d3445902c5d5a19/cinema/plugin.js",
+  "domains": ["ditherx.github.io"],
+  "bundle": "https://raw.githubusercontent.com/DiTheRX/ditherx.github.io/209fffc4763bd005a3d362788d3445902c5d5a19/cinema/plugin.js",
+  "sha256": "c7298a078f350f751a10c332acf75eecdaa4e8dba50bf5a0230e4df51fd35dc6",
+  "settings": [
+    {
+      "key": "everywhere",
+      "type": "boolean",
+      "label": { "ru": "Показывать ролик на любом фильме", "en": "Offer the clip on every title" },
+      "default": true
+    }
+  ]
+}
