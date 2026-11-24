@@ -1,0 +1,36 @@
+<!-- ditherx-test: title card tab. Runs in the platform's sandboxed iframe; network only via cinema.fetch. -->
+<style>
+  .wrap { padding: 12px; display: grid; gap: 10px; }
+  .muted { color: #a3a3a3; font-size: 12px; }
+  .items { display: flex; flex-wrap: wrap; gap: 8px; }
+  button { background: #262626; color: inherit; border: 1px solid #404040; border-radius: 6px; padding: 6px 10px; cursor: pointer; }
+  button:hover { border-color: #a3a3a3; }
+</style>
+<div class="wrap">
+  <div><b id="name"></b> <span class="muted" id="meta"></span></div>
+  <div class="items" id="items"></div>
+  <div class="muted" id="status">…</div>
+</div>
+<script>
+  const ru = cinema.locale !== 'en';
+  const t = cinema.title;
+  document.getElementById('name').textContent = t.title;
+  document.getElementById('meta').textContent = [t.year, `TMDB ${t.type}:${t.id}`].filter(Boolean).join(' · ');
+  const status = document.getElementById('status');
+  (async () => {
+    const r = await cinema.fetch('https://ditherx.github.io/cinema/library.json');
+    if (r.status !== 200) throw new Error(`HTTP ${r.status}`);
+    const lib = JSON.parse(r.text);
+    const own = lib.byTmdb[`${t.type}:${t.id}`] || [];
+    const all = [...own, ...lib.any];
+    status.textContent = ru
+      ? 'Выберите ролик: он появится ниже с кнопками запуска.'
+      : 'Pick a clip: it shows up below with the start buttons.';
+    for (const it of all) {
+      const b = document.createElement('button');
+      b.textContent = `${it.title} · ${it.quality}`;
+      b.onclick = () => cinema.offer([{ title: it.title, detail: it.quality, source: `${cinema.plugin}:${it.id}` }]);
+      document.getElementById('items').append(b);
+    }
+  })().catch((e) => (status.textContent = (ru ? 'Ошибка: ' : 'Error: ') + e.message));
+</script>
